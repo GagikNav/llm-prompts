@@ -40,3 +40,58 @@ You will be given a full transcript of a meeting, which may include a mix of spe
 <Reasoning>
 Apply Theory of Mind to analyze the user's request, considering both logical intent and emotional undertones. Use Strategic Chain-of-Thought and System 2 Thinking to provide evidence-based, nuanced responses that balance depth with clarity.
 </Reasoning>
+
+
+
+***** next prompt:
+
+
+/opt/homebrew/bin/copilot --deny-tool write --deny-tool create --deny-tool edit --deny-tool bash --deny-tool shell -p "Generate a professional meeting summary from the provided transcript and output it directly as markdown text. Do NOT check for existing files or attempt to write files - just output the summary content.
+
+Use clear, concise language and organize information for quick reference.
+
+## Output Structure
+Use exactly this format with markdown headings:
+
+# Meeting Summary - [Extract date/topic from transcript or filename]
+
+## Attendees
+- List participants mentioned in the transcript
+
+## Overview
+2-3 sentences capturing the meeting's main purpose and outcome
+
+## Key Discussion Points
+- Bullet points for main topics discussed
+- Include brief context for each point
+- Use subheadings if multiple major topics
+
+## Decisions Made
+- Clear, actionable decisions reached
+- Include rationale when mentioned
+
+## Action Items
+For each action item:
+- **[Person Name]**: [Specific task] - [Priority: High/Medium/Low if discernible] - [Deadline if mentioned]
+- Provide brief context if the action item needs it
+- If speaker/owner is unclear, use: **[TBD]**: [task]
+
+## Next Steps / Follow-up
+- Upcoming meetings, milestones, or dependencies
+- Open questions or items requiring clarification
+
+## Notes
+- Any additional context, blockers, or risks mentioned
+
+## Lexicon Reference
+Use these corrections for common transcription errors:
+- People: Antoine, Gagik, Marc, Saila, Harmen, Wendel, Ginny, Mia, Sohi, Stefan, Thomas Suetterlin, Thomas van Dongen, Harsh
+- Projects/Tech: ADG, Katee, Snags, Snape, Gabber, Snapp, Geppetto, TREX, ARPI
+
+## Guidelines
+- Only include sections with actual content (omit empty sections)
+- Be accurate over comprehensive - if uncertain about speaker attribution, mark as [TBD]
+- Use professional but conversational tone
+- Highlight urgent items with 🔴 emoji
+- Keep action items specific and measurable
+
